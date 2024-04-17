@@ -1,0 +1,98 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Coupon Page',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: CouponPage(),
+    );
+  }
+}
+
+class CouponPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Apply Coupons'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.food_bank, size: 50.0, color: Colors.black),
+                Text(
+                  '-2',
+                  style: TextStyle(fontSize: 30.0),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'NGN 20,000',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    Icon(Icons.add, size: 30.0),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              color: Colors.black,
+              child: ListTile(
+                title: Text(
+                  'Apply Coupons',
+                  style: TextStyle(color: Colors.white),
+                ),
+                trailing: Icon(Icons.arrow_forward, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Your Order ID:',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  Text(
+                    'Your Order Date:',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  Text(
+                    'Your Order Type:',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              color: Colors.yellow,
+              child: ListTile(
+                title: Text(
+                  'Confirm Order',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                trailing: Icon(Icons.thumb_up, size: 30.0),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
